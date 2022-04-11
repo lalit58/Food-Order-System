@@ -65,7 +65,7 @@
                         {
                             while($row=mysqli_fetch_assoc($res))
                             {
-                                $id= $row['id'];
+                                $id= $row['foodid'];
                                 $title=$row['title'];
                                 $price =$row['price'];
                                 $image_name = $row['image_name'];

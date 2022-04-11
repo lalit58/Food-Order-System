@@ -95,20 +95,79 @@ fieldset{
     float: left;
 
 }
+/* .navbar{
+    overflow: hidden;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
 .menu{
     line-height: 80px;
+    
 }
 .menu ul{
     list-style-type: none;
+    
 }
 .menu ul li{
     display: inline;
     padding: 1%;
     font-weight: bold;
 }
-/* .menu ul li a{
-    color: black;
-} */
+#user-menu-dropdown{
+    color:#e74c3c;
+    border:none;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+#user-menu-dropdown option{
+    color:#e74c3c;
+}
+
+#user-menu-dropdown:hover{
+    outline:none;
+}
+/* .menu ul li ul li{ */
+    /* display: block; */
+    /* background: #2c3e50; */
+    /* list-style: none;
+    display: inline-block;
+    position: relative; */
+    /* color: black; */
+    /* font-size: 2px;  */
+/* } */
+/* .menu ul li ul {
+    display: block; */
+    /* padding: 0 15px; */
+    /* color: white; */
+    /* text-decoration: none;
+    line-height: 60px;
+    font-size: 20px;
+}
+
+.menu ul li ul li{
+    position: absolute;
+    top: 60px; */
+    
+    /* display: none; */
+/* } */
+
+
+
+.down-nav{
+    background-color: #c0392b;
+    border-radius: 3px;
+    display: center;
+    padding: 1%;
+    font-weight: bold;
+}
+.down-nav a{
+    color: white;
+    padding: 0.5rem 4rem;
+    font-size: large;    
+}
 /* css for food search section */
 .food-search{
     background-image: url(../images/bg1.jpg);
@@ -168,6 +227,16 @@ fieldset{
 .food-detail{
     font-size: 1rem;
     color: #34495e;
+}
+.food-cart .select{
+    height: 24px;
+    width: 50%;
+    border: 1px solid #626262;
+    margin-top: 7px;
+    
+}
+.food-cart .add-cart{
+    cursor: pointer;
 }
 
 /* css for social */

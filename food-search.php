@@ -46,7 +46,7 @@
                 while($row=mysqli_fetch_assoc($res))
                 {
                     //Get the details
-                    $id = $row['id'];
+                    $id = $row['foodid'];
                     $title = $row['title'];
                     $price = $row['price'];
                     $description = $row['description'];
@@ -76,14 +76,23 @@
 
                         <div class="food-menu-desc">
                             <h4><?php echo $title; ?></h4>
-                            <p class="food-price">$<?php echo $price; ?></p>
+                            <p class="food-price">&#8377; <?php echo $price; ?></p>
                             <p class="food-detail">
                                 <?php echo $description; ?>
                             </p>
+                            <p><h6 class="btn success">4.4 <i class="fa fa-star "></i></h6></p>
                             <br>
 
-                            <a href="#" class="btn btn-primary">Order Now</a>
+                            <!-- <a href="#" class="btn btn-primary">Order Now</a> -->
                         </div>
+                        <form method="POST" action="cart.php">
+                                <input type="hidden" name="id" value="<?= $id; ?>">   
+                                <input type="hidden" name="title" value="<?= $title; ?>">
+                                <input type="hidden" name="food-price" value="<?= $price; ?>">
+                                <input type="number" class="food-cart" name="quantity" value="1" > <br><br>
+                                <input type="submit" class="btn btn-primary" style="width: 38% " name="add_to_cart" value="Add To Cart" >
+                                
+                            </form>
                     </div>
 
                     <?php

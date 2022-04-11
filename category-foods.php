@@ -48,7 +48,7 @@
                 {
                     while($row2=mysqli_fetch_assoc($res2))
                     {
-                        $id =$row2['id'];
+                        $foodid =$row2['foodid'];
                         $title=$row2['title'];
                         $price=$row2['price'];
                         $description =$row2['description'];
@@ -74,14 +74,23 @@
 
                                 <div class="food-menu-desc">
                                     <h4><?php echo $title;?></h4>
-                                    <p class="food-price">Rs.<?php echo $price;?></p>
+                                    <p class="food-price">&#8377;<?php echo $price;?></p>
                                     <p class="food-detail">
                                         <?php echo $description; ?>
                                     </p>
+                                    <p><h6 class="btn success">4.4 <i class="fa fa-star "></i></h6></p>
                                     <br>
-                                    <a href="<?php SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                                    <!-- <a href="<?php SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a> -->
 
                                 </div>
+                                <form method="POST" action="manage_cart.php">
+                                <input type="hidden" name="foodid" value="<?= $foodid; ?>">   
+                                <input type="hidden" name="title" value="<?= $title; ?>">
+                                <input type="hidden" name="foodprice" value="<?= $price; ?>">
+                                <input type="number" class="food-cart" name="quantity" value="1" > <br><br>
+                                <input type="submit" class="btn btn-primary" style="width: 38% " name="add_to_cart" value="Add To Cart" >
+                                
+                            </form>
                             </div>
 
                         <?php

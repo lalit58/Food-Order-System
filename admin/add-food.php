@@ -102,7 +102,7 @@
                             <input type="submit" name="submit" value="Add Food" class="btn-secondary">
                         </td>
                     </tr>
-
+                    <input type="hidden" name="quantity" value='1'>
                 </table>
             </form>
             <!-- Add Food form ends here -->

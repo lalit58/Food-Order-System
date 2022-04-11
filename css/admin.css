@@ -74,7 +74,12 @@ table tr td{
     color: #ff4757;
 
 }
-
+/* .col{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50px;
+} */
 
 
 
@@ -175,6 +180,6 @@ input[type=text], input[type=password] {
       .login-footer a{
           text-decoration: none;
       }
-      .login-body{
+      /* .login-body{
           background-color:rgb(0, 0, 0);
-      }
+      } */

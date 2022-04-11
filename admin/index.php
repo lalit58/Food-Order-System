@@ -51,7 +51,7 @@
             
             <?php 
                 //Sql Query 
-                $sql3 = "SELECT * FROM tbl_order";
+                $sql3 = "SELECT * FROM order_manager";
                 //Execute Query
                 $res3 = mysqli_query($conn, $sql3);
                 //Count Rows
@@ -68,7 +68,7 @@
             <?php 
                 //Creat SQL Query to Get Total Revenue Generated
                 //Aggregate Function in SQL
-                $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Delivered'";
+                $sql4 = "SELECT SUM(foodprice) AS Total FROM user_orders";
 
                 //Execute the Query
                 $res4 = mysqli_query($conn, $sql4);
@@ -81,7 +81,7 @@
 
             ?>
 
-            <h1>Rs.<?php echo $total_revenue; ?></h1>
+            <h1>&#8377; <?php echo $total_revenue; ?></h1>
             <br />
             Revenue Generated
         </div>

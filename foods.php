@@ -16,6 +16,7 @@
 
 
    <!--Food Menu section starts here-->
+   
    <section class="food-menu">
     <div class="container">
          <h2 class="text-center">Food Menu</h2>
@@ -32,7 +33,7 @@
             {
                 while($row=mysqli_fetch_assoc($res))
                 {
-                    $id=$row['id'];
+                    $foodid=$row['foodid'];
                     $title=$row['title'];
                     $description=$row['description'];
                     $price=$row['price'];
@@ -58,14 +59,24 @@
 
                         <div class="food-menu-desc">
                             <h4><?php echo $title; ?></h4>
-                            <p class="food-price">Rs.<?php echo $price;?></p>
+                            <p class="food-price">&#8377; <?php echo $price;?></p>
                             <p class="food-detail">
                                 <?php echo $description; ?>
                             </p>
+                            <p><h6 class="btn success">4.4 <i class="fa fa-star "></i></h6></p>
                             <br>
-                            <a href="<?php SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
-
+                            <!-- <a href="<?php SITEURL; ?>order.php?food_id=<?php echo $foodid; ?>" class="btn btn-primary">Order Now</a> -->
+                            
                         </div>
+                        <form method="POST" action="manage_cart.php">
+                                <!-- <input type="hidden" name="foodid" value="<?= $foodid; ?>">    -->
+                                <input type="hidden" name="title" value="<?= $title; ?>">
+                                <input type="hidden" name="foodprice" value="<?= $price; ?>">
+                                <input type="number" class="food-cart" name="quantity" value="1" > <br><br>
+                                <input type="submit" class="btn btn-primary" style="width: 38% " name="add_to_cart" value="Add To Cart" >
+                                
+                            </form>
+                        
                     </div>
                     <?php
                 }
@@ -77,11 +88,13 @@
             }
          ?>
          
+         
          <div class="clearfix"></div>
          
     </div>
     
 </section>
 <!--Food menu section ends here-->
+
     
 <?php include('partials-front/footer.php'); ?>
